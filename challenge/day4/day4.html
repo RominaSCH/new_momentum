@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <h2>Hello!</h2>
+    <script>
+      const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
+      const text = document.querySelector("h2");
+      /*
+      ✅ The text of the title should change when the mouse is on top of it.
+      ✅ The text of the title should change when the mouse is leaves it.
+      ✅ When the window is resized the title should change.
+      ✅ On right click the title should also change.
+      ✅ The colors of the title should come from a color from the colors array.
+      ✅ DO NOT CHANGE .css, or .html files.
+      ✅ ALL function handlers should be INSIDE of "superEventHandler"
+      */
+      const superEventHandler = {
+        enter: () => {
+          text.style.color = colors[0];
+          text.innerHTML = "The mouse is here!";
+        },
+        leave: () => {
+          text.style.color = colors[1];
+          text.innerHTML = "The mouse is gone!";
+        },
+        rightClick: () => {
+          text.style.color = colors[2];
+          text.innerHTML = "That was a right click!";
+        },
+        resize: () => {
+          text.style.color = colors[3];
+          text.innerHTML = "You just resized!";
+        },
+      };
+      text.addEventListener("mouseenter", superEventHandler.enter);
+      text.addEventListener("mouseleave", superEventHandler.leave);
+      window.addEventListener("auxclick", superEventHandler.rightClick);
+      window.addEventListener("resize", superEventHandler.resize);
+    </script>
+  </body>
+</html>
