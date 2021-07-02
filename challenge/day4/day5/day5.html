@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <h1>Hello</h1>
+    <script>
+      const bgColor = document.querySelector("body");
+      const h1 = document.querySelector("h1");
+      const color = ["#00203F", "#0063B2", "#ADEFD1"];
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth < 768) {
+          bgColor.style.backgroundColor = color[0];
+          h1.innerHTML = "SMALL";
+          h1.style.color = "#fff"
+        } else if (window.innerWidth < 1200) {
+          bgColor.style.backgroundColor = color[1];
+          h1.innerHTML = "MEDIUM";
+          h1.style.color = "#fff"
+        } else {
+          bgColor.style.backgroundColor = color[2];
+          h1.innerHTML = "BIG";
+          h1.style.color = "#000"
+        }
+      });
+    </script>
+  </body>
+</html>
